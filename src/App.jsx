@@ -1,8 +1,24 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/About";
-function App() {
-  return <About />;
-}
+import Footer from "./components/Footer";
+import Contact from "./components/Contact";
+import Terms from "./components/Terms";
+import Faq from "./components/Faq";
 
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/Faq" element={<Faq />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </Router>
+  );
+}
